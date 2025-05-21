@@ -433,6 +433,9 @@ function App() {
             }}
           >
             <h2>⏱️ 시간 경매 게임 규칙</h2>
+            <h3><a href="https://www.netflix.com/browse?jbv=81653386" target="_blank" rel="noopener noreferrer">
+                        데블스 플랜 시즌2 4화 감옥 매치
+                    </a></h3>
             <p>
               <strong>‘시간 경매’</strong>는 플레이어들이 제한된 시간(5분)을 자산으로 삼아 경매 라운드에서 낙찰을 겨루는 게임입니다.
             </p>
@@ -453,7 +456,8 @@ function App() {
             </ul>
             <button onClick={closeHelpModal} style={{ marginTop: "1rem" }}>
               닫기
-            </button>
+            </button> 
+            
           </Modal>
         </>
       ) : isSpectator ? (
