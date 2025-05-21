@@ -1,0 +1,36 @@
+.spectator-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.spectator-circle {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  margin: 2rem auto;
+  border: 3px solid #5e412f; /* 원형 테두리 */
+  border-radius: 50%;
+}
+
+.player-orb {
+  position: absolute;
+  transform-origin: center center;
+  text-align: center;
+  width: 100px;
+}
+
+.player-orb .player-name {
+  font-weight: bold;
+}
+
+.player-orb.active {
+  background-color: rgba(255, 69, 0, 0.1);
+  border: 2px solid red;
+}
+
+.player-orb.ready {
+  background-color: rgba(0, 255, 0, 0.1);
+  border: 2px solid green;
+}

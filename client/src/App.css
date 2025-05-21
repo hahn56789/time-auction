@@ -1,0 +1,637 @@
+/* ---- Nickname box above tabs ---- */
+.nickname-box-global {
+  margin: 1rem auto;
+  text-align: center;
+}
+
+.nickname-box-global input {
+  font-family: 'Playfair Display', serif;
+  padding: 0.75rem 1.2rem;
+  font-size: 1.15rem;
+  border: 2px solid #5e412f;
+  border-radius: 12px;
+  background-color: #fffaf5;
+  color: #3e2e1a;
+  width: 320px;
+  text-align: center;
+  box-shadow: inset 0 2px 4px rgba(94, 65, 47, 0.1);
+  transition: all 0.2s ease-in-out;
+}
+
+.nickname-box-global input:focus {
+  outline: none;
+  border-color: #8b5e3c;
+  box-shadow: 0 0 5px rgba(139, 94, 60, 0.5);
+}
+
+/* ---- Folder-style tab selector ---- */
+.tab-selector.folder-style {
+  border-bottom: 3px solid #5e412f;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.tab-selector.folder-style button {
+  font-family: 'Playfair Display', serif;
+  background: #f5f0ea;
+  border: 2px solid #8b5e3c;
+  border-bottom: none;
+  border-radius: 12px 12px 0 0;
+  padding: 0.6rem 1.2rem;
+  font-weight: bold;
+  color: #5e412f;
+  cursor: pointer;
+  margin: 0 0.25rem;
+  transition: background 0.3s, color 0.3s;
+}
+
+.tab-selector.folder-style button.active {
+  background: #5e412f;;
+  border-color: #8b5e3c;
+  color: #fffaf5;
+  border-bottom: 3px solid #fffaf5;
+}
+/* --- Tabbed join layout styles --- */
+.tab-selector {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.tab-selector button {
+  background: #eee;
+  border: 1px solid #ccc;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.tab-selector button.active {
+  background: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.tab-content {
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+}
+
+.tab-content .square-box {
+  margin-top: 1rem;
+}
+/* App.css - 반응형 + 애니메이션 포함 전체 스타일 */
+
+body {
+margin: 0;
+font-family: "Pretendard", "Segoe UI", sans-serif;
+background-color: #f6f9fc;
+color: #333;
+}
+
+.App {
+max-width: 800px;
+margin: auto;
+padding: 2rem 1rem;
+text-align: center;
+}
+
+/* 시작화면 */
+/* --- Improved join screen styling --- */
+.join-area {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  background: white;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  max-width: 480px;
+  margin: 2rem auto;
+}
+
+.nickname-box input {
+  background: #fff;
+  border: 2px solid #007bff;
+  font-size: 1.1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.1);
+}
+
+.join-options {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.square-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.square-box button {
+  font-family: 'Playfair Display', serif;
+  background: #8b5e3c;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3);
+  cursor: pointer;
+}
+
+.square-box button:hover {
+  background-color: #5e412f;
+}
+
+.square-box input {
+  font-family: 'Playfair Display', serif;
+  padding: 0.75rem 1rem;
+  font-size: 1.1rem;
+  border: 2px solid #5e412f;
+  border-radius: 10px;
+  background-color: #fffaf5;
+  color: #3e2e1a;
+  text-align: center;
+  width: 250px;
+  box-shadow: inset 0 1px 2px rgba(94, 65, 47, 0.08);
+  transition: all 0.2s ease-in-out;
+}
+
+.square-box input:focus {
+  outline: none;
+  border-color: #8b5e3c;
+  box-shadow: 0 0 5px rgba(139, 94, 60, 0.4);
+}
+
+.square-box form button {
+  font-family: 'Playfair Display', serif;
+  background-color: #7b4b24;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  border: 2px solid #5e412f;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(94, 65, 47, 0.25);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.square-box form button:hover {
+  background-color: #5e412f;
+}
+
+/* 전광판 및 플레이어 정보 */
+.info-area {
+  background: #fffaf5;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  border-radius: 16px;
+  border: 2px solid #8b5e3c;
+  box-shadow: 0 4px 12px rgba(94, 65, 47, 0.1);
+  font-family: 'Playfair Display', serif;
+  color: #3e2e1a;
+}
+
+.info-area h1,
+.info-area h2,
+.info-area h3 {
+margin: 0.5rem 0;
+}
+
+.info-area ul {
+list-style: none;
+padding: 0;
+margin: 1rem 0;
+}
+
+.info-area li {
+padding: 0.3rem 0;
+font-size: 1rem;
+}
+
+/* 라운드 진행 바 */
+.round-tracker {
+display: flex;
+gap: 8px;
+justify-content: center;
+margin: 1.5rem 0;
+}
+
+.round-box {
+width: 24px;
+height: 24px;
+border-radius: 50%;
+background-color: #e0e0e0;
+border: 2px solid transparent;
+}
+
+.round-box.completed {
+background-color: #6c757d;
+}
+
+.round-box.current {
+border-color: #007bff;
+box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+}
+
+/* 참여 버튼 */
+/* --- Modern vintage-inspired octagon button style --- */
+.octagon-button {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140px;
+  height: 140px;
+  background-color: #7b4b24;
+  color: #fffaf0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  font-family: 'Playfair Display', serif;
+  border-radius: 16px;
+  border: 3px solid #5e412f;
+  box-shadow:
+    0 6px 12px rgba(0, 0, 0, 0.3),
+    inset 0 0 6px rgba(255, 255, 255, 0.05);
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-shadow: 1px 1px 2px #3e2e1a;
+}
+
+.octagon-button.pressed {
+  filter: brightness(0.9);
+  transform: translateX(-50%) scale(0.95);
+}
+
+.octagon-button:hover {
+  filter: brightness(1.05);
+  transform: translateX(-50%) scale(1.05);
+  box-shadow: 0 8px 14px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes popIn {
+from {
+opacity: 0;
+transform: translateX(-50%) scale(0.8);
+}
+to {
+opacity: 1;
+transform: translateX(-50%) scale(1);
+}
+}
+
+/* 순위표 */
+.final-standings {
+margin-top: 2rem;
+background: #fff;
+padding: 1rem;
+border-radius: 16px;
+box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.final-standings table {
+width: 100%;
+border-collapse: collapse;
+margin-top: 1rem;
+}
+
+.final-standings th, .final-standings td {
+padding: 0.6rem;
+border-bottom: 1px solid #eee;
+}
+
+.final-standings th {
+background-color: #007bff;
+color: white;
+}
+
+.final-standings td:first-child {
+font-weight: bold;
+}
+
+.final-standings tr:nth-child(1) td {
+background: #ffeaa7;
+}
+
+.final-standings tr:nth-child(2) td {
+background: #dfe6e9;
+}
+
+.final-standings tr:nth-child(3) td {
+background: #fab1a0;
+}
+
+/* 리매치 모달 */
+.rematch-modal {
+position: fixed;
+top: 80px;
+left: 50%;
+transform: translateX(-50%);
+background: white;
+border: 2px solid #007bff;
+padding: 1.2rem 2rem;
+border-radius: 12px;
+box-shadow: 0 0 12px rgba(0,0,0,0.2);
+z-index: 1000;
+animation: fadeUp 0.4s ease;
+}
+
+@keyframes fadeUp {
+from {
+opacity: 0;
+transform: translate(-50%, 20px);
+}
+to {
+opacity: 1;
+transform: translate(-50%, 0);
+}
+}
+
+.rematch-modal button {
+margin: 0 0.5rem;
+padding: 0.5rem 1.2rem;
+font-size: 1rem;
+border-radius: 8px;
+border: none;
+cursor: pointer;
+}
+
+.rematch-modal button:first-child {
+background: #007bff;
+color: white;
+}
+
+.rematch-modal button:last-child {
+background: #e0e0e0;
+}
+
+/* 결과 메시지 강조 */
+.result-message {
+margin: 1rem auto;
+padding: 0.6rem 1rem;
+background-color: #fff9c4;
+border-left: 4px solid #fbc02d;
+border-radius: 6px;
+font-weight: 500;
+width: fit-content;
+animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+from { opacity: 0; }
+to   { opacity: 1; }
+}
+
+/* 모바일 대응 */
+@media (max-width: 600px) {
+.App {
+padding: 1rem 0.5rem;
+}
+
+.join-area,
+.info-area,
+.final-standings {
+padding: 1rem;
+border-radius: 12px;
+}
+
+.join-area input {
+width: 90%;
+font-size: 0.95rem;
+}
+
+.join-area button,
+.rematch-modal button {
+font-size: 0.95rem;
+padding: 0.5rem 1rem;
+}
+
+.octagon-button {
+width: 100px;
+height: 100px;
+font-size: 0.9rem;
+}
+
+.round-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.rematch-modal {
+width: 90%;
+padding: 1rem;
+}
+
+.rematch-modal button {
+width: 40%;
+}
+
+.final-standings table th,
+.final-standings table td {
+font-size: 0.9rem;
+padding: 0.4rem;
+}
+}
+
+.room-code-fixed {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  background: white;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  z-index: 100;
+}
+
+.scoreboard-display {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  color: #fffaf0;
+  padding: 0.6rem 1.2rem;
+  border-radius: 12px;
+  display: inline-block;
+  width: 160px;
+  height: 70px;
+  line-height: 70px;
+  box-shadow:
+    inset 0 0 8px rgba(0, 0, 0, 0.3),
+    0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 2px solid #5e412f;
+  text-shadow: 1px 1px 2px #3e2e1a;
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+
+.win-table {
+  font-family: 'Playfair Display', serif;
+  background: #fffaf5;
+  padding: 1rem;
+  border: 2px solid #8b5e3c;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(94, 65, 47, 0.1);
+  color: #3e2e1a;
+  margin: 1rem auto;
+  width: 100%;
+  max-width: 500px;
+}
+
+.win-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+}
+
+.win-table th,
+.win-table td {
+  border: 1px solid #8b5e3c;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.win-table th {
+  background-color: #f5eadd;
+}
+
+.exit-prompt {
+  position: fixed;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  border: 2px solid #ccc;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.countdown-blink {
+  animation: blinkScale 1s infinite;
+  color: red;
+  font-weight: bold;
+  font-size: 3rem;
+  display: inline-block;
+}
+
+@keyframes blinkScale {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.2);
+  }
+}
+
+.round-details {
+  margin-top: 1rem;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow-x: auto;
+}
+
+.round-details table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.round-details th,
+.round-details td {
+  border: 1px solid #ddd;
+  padding: 0.5rem;
+  min-width: 80px;
+}
+
+.round-details th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+}
+
+.round-details tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.round-details tr:hover {
+  background-color: #f5f5f5;
+}
+
+@font-face {
+  font-family: 'MyTitleFont';
+  src: url('../public/font/HSBombaram3.0_Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.main-title {
+  font-family: 'MyTitleFont', sans-serif;
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.main-title-image {
+  max-width: 80%;
+  height: auto;
+  margin: 1.5rem auto;
+  display: block;
+}
+
+.title-wrapper {
+  width: 100%;                  /* 부모 너비 기준 */
+  max-width: 400px;             /* ✅ 이미지 최대 크기 제한 */
+  height: 133px;                /* 원본 높이(1024)의 50% 비율: 512 → 133 */
+  overflow: hidden;
+  margin: 1rem auto;
+}
+
+.cropped-img {
+  width: 100%;
+  height: auto;
+  transform: translateY(-25%);  /* 상단 25% 자르기 */
+}
+
+.App {
+  font-family: 'HSBombaram', sans-serif;
+}
+.player-cell {
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  font-size: 1rem;
+  color: #3e2e1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
