@@ -504,7 +504,7 @@ io.on("connection", socket => {
   });
 });
 
-// ====== 서버 실행 ======
-server.listen(4000, '0.0.0.0', () => {
-  console.log("🚀 서버 실행 중: http://0.0.0.0:4000");
+const PORT = process.env.PORT || 4000;
+server.listen(PORT, '0.0.0.0', () => {
+  console.log(`🚀 서버 실행 중: http://0.0.0.0:${PORT}`);
 });

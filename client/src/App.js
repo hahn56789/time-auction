@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import Modal from "react-modal";
 import SpectatorView from "./SpectatorView";
 import "./App.css";
 
@@ -253,6 +254,11 @@ function App() {
     return () => socket.off("roomFull");
   }, []);
 
+  // 🛈 게임 설명 모달 상태 및 함수
+  const [showHelpModal, setShowHelpModal] = useState(false);
+  const openHelpModal = () => setShowHelpModal(true);
+  const closeHelpModal = () => setShowHelpModal(false);
+
   // 입장 관련
   const handleCreateRoom = () => {
     if (!nickname) return alert("닉네임을 입력해주세요.");
@@ -404,6 +410,51 @@ function App() {
               )}
             </div>
           </div>
+          <button onClick={openHelpModal} style={{ marginTop: "1rem", fontSize: "1rem" }}>
+            ❔ 게임 설명 보기
+          </button>
+
+          <Modal
+            isOpen={showHelpModal}
+            onRequestClose={closeHelpModal}
+            contentLabel="게임 설명"
+            ariaHideApp={false}
+            style={{
+              content: {
+                maxWidth: "600px",
+                margin: "auto",
+                padding: "2rem",
+                borderRadius: "12px",
+                border: "2px solid #5e412f",
+                backgroundColor: "#fffaf5",
+                color: "#3e2e1a",
+                fontFamily: "'Playfair Display', serif",
+              }
+            }}
+          >
+            <h2>⏱️ 시간 경매 게임 규칙</h2>
+            <p>
+              <strong>‘시간 경매’</strong>는 플레이어들이 제한된 시간(5분)을 자산으로 삼아 경매 라운드에서 낙찰을 겨루는 게임입니다.
+            </p>
+            <ul style={{ textAlign: "left", paddingLeft: "1.2rem" }}>
+              <li>각 플레이어는 <b>5분(300초)의 시간을 보유</b>하고 시작합니다. 기록은 0.1초 단위로 이루어집니다.</li>
+              <li>방에 입장한 모든 플레이어가 <img src="/img/ready_button_icon.png" alt="준비완료 버튼" style={{ width: "50px", verticalAlign: "middle", margin: "0 3px" }} /> 상태가 되면 카운트다운이 시작됩니다.</li>
+              <li><b>5초의 카운트다운이 진행되며, 이 안에 <img src="/img/participate_button_icon.png" alt="버튼" style={{ width: "50px", verticalAlign: "middle", margin: "0 3px" }} /> 버튼에서 손을 떼면 해당 라운드에 참여하지 않게 됩니다.</b></li>
+              <li>카운트다운 종료 후, 버튼을 계속 누르고 있는 플레이어들은 참여자로 간주되며, <b>보유 시간이 소모되기 시작합니다.</b></li>
+              <li><b>참여자는 경매 도중 원하는 순간에 버튼에서 손을 떼어 입찰 시간을 정지시킬 수 있습니다.</b></li>
+              <li>남은 시간을 모두 소진하면 자동으로 버튼에서 손이 떼어지며, 해당 입찰이 최종 시간으로 기록됩니다.</li>
+              <li><b>가장 오랫동안 버튼을 누르고 있다가 손을 뗀 플레이어가 해당 라운드를 낙찰받습니다.</b></li>
+              <li>단, 두 명 이상이 동일한 시간(0.1초 단위까지)으로 입찰했을 경우, 해당 라운드는 유찰됩니다.</li>
+              <li>낙찰자와 사용 시간은 공개되지만, 누가 경매에 참여했는지는 공개되지 않습니다.</li>
+              <li>전광판에는 오직 현재 경매 시간이 실시간으로 표시되며, 개인의 남은 시간은 본인에게만 표시됩니다.</li>
+              <li><b>가장 많은 라운드를 낙찰받은 사람 순서로 순위가 결정됩니다.</b></li>
+              <li><b>라운드 낙찰 수가 동일할 경우 개인 보유시간이 더 많이 남은 사람이 순위가 높게 측정됩니다.</b></li>
+              
+            </ul>
+            <button onClick={closeHelpModal} style={{ marginTop: "1rem" }}>
+              닫기
+            </button>
+          </Modal>
         </>
       ) : isSpectator ? (
         <SpectatorView
@@ -550,7 +601,7 @@ function App() {
                 onTouchStart={() => handleHold(true)}
                 onTouchEnd={() => handleHold(false)}
             >
-                참여 버튼
+                참여
             </button>
           )}
 
