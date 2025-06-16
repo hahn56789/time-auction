@@ -67,6 +67,6 @@ npm start
 
  ## 📞 문의
 
-개발자: @HahnGyuTak
+개발자: [@HahnGyuTak](https://github.com/HahnGyuTak)
 
 프로젝트 관련 문의는 이슈나 PR로 남겨주세요.
